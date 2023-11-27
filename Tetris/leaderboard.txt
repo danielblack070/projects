@@ -1,0 +1,9 @@
+MGHCK	333
+FKTD	54
+ALPHA	32
+I_WIN	4
+MADMX	56
+Razor	4
+EZ	33
+Daniello	0
+Gyula	36

@@ -1,0 +1,8 @@
+Konfiguráció a Tetris-hez. Ne cseréld fel a sorok sorrendjét!
+
+800	ablak vízszintes mérete (pixel)
+600	ablak függõleges mérete (pixel)
+20	a pálya sorainak száma
+10	a pálya oszlopainak száma 
+700	Milyen idõközönként essen magától 1-et lefelé az elem? (ezred másodperc)
+15	Kitörölt soronként mennyivel csökkenjen a leesés ideje? (ezred másodperc)

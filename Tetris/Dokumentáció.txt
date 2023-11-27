@@ -1,0 +1,28 @@
+Tetris by Fekete Dániel
+
+Útmutató
+
+Az általam készített program a Tetris grafikus játék.
+A játék célja, hogy a felhasználó a lehető legtöbb pontot gyűjtse.
+A játék menete:
+A program véletlenszerűen generál alakzatokat, melyek minden esetben 4 db egymáshoz oldalaikkal illeszkedő négyzetekből állnak. Ezeket az elemeket lehet mozgatni jobbra,balra és lefelé, valamint forgatni balra. A forgatás a fel nyíllal történik, a többi nyíllal azok irányának megfelelő mozgatás történik. Az elemek felhasználói reakció nélkül is mozognak lefelé a konfigurációban meghatározott időközönként, ezért viszonylag gyors gondolkodást igényel a játék. Amikor egy elem már nem tud lejjebb mozogni automatikusan, mert alatta van egy lerakott elem, vagy elérte a pálya alját, akkor az rögzítve lesz. Ekkor egy új elemet kap a játékos. A soron következő elemet a játék előre mutatja a játékosnak. A lényeg az, hogy a meglévő elemet úgy illessze be a rögzítettek közé, hogy azzal a pálya teljes szélességében létrehozzon egy telített sort, ugyanis ekkor a sor törlődik, és minden fölötte lévő elem egyel lejjebb esik. A pontokat is ezért a mozzanatért adja a játék. A játék során minél több sort sikerült törölnie a játékosnak, annál több pontot szerez, de nem ilyen egyszerű a dolga! Minden törölt sor után az elemek a konfigurációban meghatározott értékkel kevesebb idő alatt fognak automatikusan lefelé mozogni.
+Az elemek mozgatása akkor lehetséges, ha a mozgatás után is a pályán maradnak, és nem fedik a már rögzített elemeket sem. Forgatni szintén csak ebben az esetben lehet.
+A játék végén a felhasználó lehetőséget kap arra, hogy az eredményét rögzítse a dicsőségtáblára, majd ezután meg is tekintheti azt.
+
+Technikai dokumentáció
+
+A program felépítése:
+
+Az elemek osztályként vannak tárolva, melyek tartalmazzák azok alakját(egy 4x4 es logikai listában, mely az adott blokkok fizikai meglétét tárolja), x és y koordinátáit(az említett 4x4es lista bal felső sarka), színét,oldalhosszát.
+
+A pálya egy olyan osztályban van tárolva, mely alkalmazkodik a konfiguráció által befolyásolt pályamérethez. Az osztály tartalmazza az egyes blokkok színét, foglaltságát (ezek 2-dimenziós listák, amik alkalmazkodik a konfigurációhoz), sorainak és oszlopainak számát, valamint a blokkok oldahosszát tárolja.
+
+A mozgatás és forgatás logikai feltételének ellenőrzése az átfedés nevű függvénnyel történik. A forgatás is külön függvénnyel hajtódik végre.
+
+Maga a mozgatás a pygame.event modul segítségével történik, a billentyűzet figyelésével.
+
+Az elemek meghatározott időközönként lefelé haladását egy óra biztosítja.
+
+Az alakzat és a színének generálása a random modul segítségével történik.
+
+A kirajzoláshoz különvettem a rajz modulba a függvényeket	
